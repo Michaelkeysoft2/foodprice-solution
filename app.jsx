@@ -146,7 +146,7 @@ const calculateDiscount = (price, oldPrice) => {
 
 // --- COMPONENTS ---
 
-const Header = ({ cartCount }) => {
+const Header = ({ cartCount, onOpenCart, onOpenAuth, user, searchQuery, setSearchQuery }) => {
   return (
     <header className="header">
       <a href="#" className="logo">
@@ -156,20 +156,26 @@ const Header = ({ cartCount }) => {
 
       <div className="search-container">
         <i className="fa-solid fa-magnifying-glass search-icon"></i>
-        <input type="text" className="search-input" placeholder="Search for food, groceries, grains..." />
+        <input 
+          type="text" 
+          className="search-input" 
+          placeholder="Search for food, groceries, grains..." 
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
         <button className="search-btn">SEARCH</button>
       </div>
 
       <div className="header-actions">
-        <div className="action-item">
+        <div className="action-item" onClick={onOpenAuth}>
           <i className="fa-regular fa-user"></i>
-          <span>Account</span>
+          <span>{user ? user.name : 'Account'}</span>
         </div>
         <div className="action-item">
           <i className="fa-solid fa-list-check"></i>
           <span>Orders</span>
         </div>
-        <div className="action-item">
+        <div className="action-item" onClick={onOpenCart}>
           <i className="fa-solid fa-cart-shopping"></i>
           <span>Cart</span>
           {cartCount > 0 && <span className="cart-badge bump">{cartCount}</span>}
@@ -253,31 +259,196 @@ const ToastContainer = ({ toasts }) => {
   );
 };
 
+// --- NEW COMPONENTS ---
+const AuthModal = ({ isOpen, onClose, onLogin }) => {
+  const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({ name: '', phone: '', password: '' });
+
+  if (!isOpen) return null;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isLogin) {
+      // Simulate Login
+      const savedUser = JSON.parse(localStorage.getItem('freshcart_user'));
+      if (savedUser && savedUser.phone === formData.phone && savedUser.password === formData.password) {
+        onLogin(savedUser);
+        onClose();
+      } else {
+        alert("Invalid phone number or password. Try creating an account.");
+      }
+    } else {
+      // Simulate Signup
+      localStorage.setItem('freshcart_user', JSON.stringify(formData));
+      onLogin(formData);
+      onClose();
+    }
+  };
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={e => e.stopPropagation()}>
+        <button className="modal-close" onClick={onClose}><i className="fa-solid fa-xmark"></i></button>
+        <h2 className="modal-title">{isLogin ? 'Welcome Back' : 'Create Account'}</h2>
+        
+        <form onSubmit={handleSubmit}>
+          {!isLogin && (
+            <div className="form-group">
+              <label className="form-label">Full Name</label>
+              <input type="text" required className="form-input" placeholder="John Doe" 
+                value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
+            </div>
+          )}
+          <div className="form-group">
+            <label className="form-label">Phone Number</label>
+            <input type="tel" required className="form-input" placeholder="08012345678" 
+              value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+          </div>
+          <div className="form-group">
+            <label className="form-label">Password</label>
+            <input type="password" required className="form-input" placeholder="••••••••" 
+              value={formData.password} onChange={e => setFormData({...formData, password: e.target.value})} />
+          </div>
+          
+          <button type="submit" className="primary-btn">{isLogin ? 'Login' : 'Sign Up'}</button>
+        </form>
+        
+        <div className="toggle-auth">
+          {isLogin ? "Don't have an account? " : "Already have an account? "}
+          <span onClick={() => setIsLogin(!isLogin)}>{isLogin ? 'Sign up' : 'Login'}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const CartModal = ({ isOpen, onClose, cartItems, onCheckout }) => {
+  if (!isOpen) return null;
+
+  const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content large" onClick={e => e.stopPropagation()}>
+        <button className="modal-close" onClick={onClose}><i className="fa-solid fa-xmark"></i></button>
+        <h2 className="modal-title"><i className="fa-solid fa-cart-shopping"></i> Your Cart</h2>
+        
+        {cartItems.length === 0 ? (
+          <p style={{ textAlign: 'center', padding: '40px 0', color: 'var(--text-medium)' }}>Your cart is empty.</p>
+        ) : (
+          <>
+            <div className="cart-list">
+              {cartItems.map(item => (
+                <div key={item.id} className="cart-item">
+                  <img src={item.img} alt={item.name} className="cart-item-img" />
+                  <div className="cart-item-details">
+                    <div className="cart-item-name">{item.name}</div>
+                    <div className="cart-item-quantity">Qty: {item.quantity}</div>
+                  </div>
+                  <div className="cart-item-price">{formatCurrency(item.price * item.quantity)}</div>
+                </div>
+              ))}
+            </div>
+            <div className="cart-total">
+              <span>Total:</span>
+              <span>{formatCurrency(total)}</span>
+            </div>
+            <button className="primary-btn" onClick={onCheckout}>Proceed to Checkout</button>
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="footer-section">
+          <h3><i className="fa-solid fa-store" style={{color: 'var(--primary-color)'}}></i> FreshCart</h3>
+          <p>Your number one marketplace for fresh groceries, grains, and daily essentials in Nigeria.</p>
+        </div>
+        
+        <div className="footer-section">
+          <h3>Customer Service</h3>
+          <p>Need help with your order? Reach out to us directly!</p>
+        </div>
+        
+        <div className="footer-section">
+          <h3>Contact Me</h3>
+          <div className="contact-links">
+            <a href="https://wa.me/2348039579410" target="_blank" rel="noopener noreferrer" className="contact-btn btn-whatsapp">
+              <i className="fa-brands fa-whatsapp"></i> Chat on WhatsApp (08039579410)
+            </a>
+            <a href="mailto:olayiwolamichael217@gmail.com" className="contact-btn btn-email">
+              <i className="fa-solid fa-envelope"></i> olayiwolamichael217@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
 // --- MAIN APP COMPONENT ---
 const App = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [cartCount, setCartCount] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [cartItems, setCartItems] = useState([]);
   const [toasts, setToasts] = useState([]);
+  
+  const [user, setUser] = useState(null);
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // Filter products based on active sidebar category
-  const displayedProducts = activeCategory === 'all' 
-    ? PRODUCTS 
-    : PRODUCTS.filter(p => p.category === activeCategory);
+  // Load user from local storage on mount
+  useEffect(() => {
+    const savedUser = localStorage.getItem('freshcart_user');
+    if (savedUser) setUser(JSON.parse(savedUser));
+  }, []);
+
+  // Filter products based on active sidebar category AND search query
+  const displayedProducts = PRODUCTS.filter(p => {
+    const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+    const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const handleAddToCart = (product) => {
-    setCartCount(prev => prev + 1);
+    setCartItems(prev => {
+      const existing = prev.find(item => item.id === product.id);
+      if (existing) {
+        return prev.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item);
+      }
+      return [...prev, { ...product, quantity: 1 }];
+    });
     
     // Add toast
     const newToast = { id: Date.now(), message: `Added ${product.name} to cart!` };
     setToasts(prev => [...prev, newToast]);
     
-    // Remove toast after 3 seconds
     setTimeout(() => {
       setToasts(prev => prev.map(t => t.id === newToast.id ? { ...t, fading: true } : t));
-      setTimeout(() => {
-        setToasts(prev => prev.filter(t => t.id !== newToast.id));
-      }, 300);
+      setTimeout(() => setToasts(prev => prev.filter(t => t.id !== newToast.id)), 300);
     }, 3000);
+  };
+
+  const handleCheckout = () => {
+    if (!user) {
+      setIsCartOpen(false);
+      setIsAuthOpen(true);
+      return;
+    }
+    // Simulate successful order
+    setCartItems([]);
+    setIsCartOpen(false);
+    
+    const newToast = { id: Date.now(), message: `Order placed successfully, ${user.name}! We will contact you soon.` };
+    setToasts(prev => [...prev, newToast]);
+    setTimeout(() => setToasts(prev => prev.filter(t => t.id !== newToast.id)), 4000);
   };
 
   return (
@@ -286,33 +457,52 @@ const App = () => {
         🚀 Save up to 20% on all bulk grain purchases this week! Use code FRESH20.
       </div>
       
-      <Header cartCount={cartCount} />
+      <Header 
+        cartCount={cartCount} 
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        user={user}
+        onOpenAuth={() => setIsAuthOpen(true)}
+        onOpenCart={() => setIsCartOpen(true)}
+      />
       
       <div className="main-layout">
         <Sidebar activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
         
         <main className="content-area">
-          {activeCategory === 'all' && <Hero />}
+          {activeCategory === 'all' && !searchQuery && <Hero />}
           
           <div className="section-title">
-            {CATEGORIES.find(c => c.id === activeCategory)?.name || 'Products'}
+            {searchQuery ? `Search Results for "${searchQuery}"` : (CATEGORIES.find(c => c.id === activeCategory)?.name || 'Products')}
             <span style={{ fontSize: '14px', fontWeight: '500', color: 'var(--text-light)' }}>
               {displayedProducts.length} items
             </span>
           </div>
           
-          <div className="product-grid">
-            {displayedProducts.map(product => (
-              <ProductCard 
-                key={product.id} 
-                product={product} 
-                onAddToCart={handleAddToCart} 
-              />
-            ))}
-          </div>
+          {displayedProducts.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '60px 20px', color: 'var(--text-medium)' }}>
+              <i className="fa-solid fa-basket-shopping" style={{ fontSize: '48px', marginBottom: '16px', opacity: 0.5 }}></i>
+              <h2>No products found</h2>
+              <p>Try searching for something else or browse another category.</p>
+            </div>
+          ) : (
+            <div className="product-grid">
+              {displayedProducts.map(product => (
+                <ProductCard 
+                  key={product.id} 
+                  product={product} 
+                  onAddToCart={handleAddToCart} 
+                />
+              ))}
+            </div>
+          )}
         </main>
       </div>
       
+      <Footer />
+      
+      <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} onLogin={setUser} />
+      <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} cartItems={cartItems} onCheckout={handleCheckout} />
       <ToastContainer toasts={toasts} />
     </div>
   );
