@@ -151,7 +151,7 @@ const Header = ({ cartCount, onOpenCart, onOpenAuth, user, searchQuery, setSearc
     <header className="header">
       <a href="#" className="logo">
         <i className="fa-solid fa-store"></i>
-        FreshCart
+        FoodPrice
       </a>
 
       <div className="search-container">
@@ -270,7 +270,7 @@ const AuthModal = ({ isOpen, onClose, onLogin }) => {
     e.preventDefault();
     if (isLogin) {
       // Simulate Login
-      const savedUser = JSON.parse(localStorage.getItem('freshcart_user'));
+      const savedUser = JSON.parse(localStorage.getItem('foodprice_user'));
       if (savedUser && savedUser.phone === formData.phone && savedUser.password === formData.password) {
         onLogin(savedUser);
         onClose();
@@ -279,7 +279,7 @@ const AuthModal = ({ isOpen, onClose, onLogin }) => {
       }
     } else {
       // Simulate Signup
-      localStorage.setItem('freshcart_user', JSON.stringify(formData));
+      localStorage.setItem('foodprice_user', JSON.stringify(formData));
       onLogin(formData);
       onClose();
     }
@@ -366,7 +366,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3><i className="fa-solid fa-store" style={{color: 'var(--primary-color)'}}></i> FreshCart</h3>
+          <h3><i className="fa-solid fa-store" style={{color: 'var(--primary-color)'}}></i> FoodPrice</h3>
           <p>Your number one marketplace for fresh groceries, grains, and daily essentials in Nigeria.</p>
         </div>
         
@@ -404,7 +404,7 @@ const App = () => {
 
   // Load user from local storage on mount
   useEffect(() => {
-    const savedUser = localStorage.getItem('freshcart_user');
+    const savedUser = localStorage.getItem('foodprice_user');
     if (savedUser) setUser(JSON.parse(savedUser));
   }, []);
 
