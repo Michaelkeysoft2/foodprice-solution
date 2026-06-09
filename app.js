@@ -3,82 +3,82 @@ const products = [
     {
         id: 1,
         name: "Mama Gold Premium Parboiled Rice - 50kg Bag",
-        price: 85000,
-        oldPrice: 95000,
+        price: 95000,
+        oldPrice: 105000,
         image: "assets/rice.png",
-        discount: "-11%"
+        discount: "-10%"
     },
     {
         id: 2,
         name: "Kings Pure Vegetable Oil - 5 Liters",
-        price: 18500,
+        price: 18000,
         oldPrice: 20000,
-        image: "assets/palmoil.png",
-        discount: "-8%"
+        image: "assets/vegoil.png",
+        discount: "-10%"
     },
     {
         id: 3,
         name: "Indomie Onion Chicken Noodles - 1 Carton (40 Packs)",
-        price: 14000,
-        oldPrice: 15500,
+        price: 16500,
+        oldPrice: 18000,
         image: "assets/noodles.png",
-        discount: "-10%"
+        discount: "-8%"
     },
     {
         id: 4,
         name: "Oloyin Honey Beans - 1 Paint Bucket",
-        price: 8500,
-        oldPrice: 9000,
-        image: "assets/rice.png", // Reused for testing
-        discount: "-6%"
+        price: 12000,
+        oldPrice: 13500,
+        image: "assets/beans.png",
+        discount: "-11%"
     },
     {
         id: 5,
-        name: "Gino Tomato Paste (Sachet) - Roll of 50",
-        price: 6000,
-        oldPrice: null,
-        image: "assets/noodles.png", // Reused for testing
-        discount: null
+        name: "Abuja Yam - Large Tuber (Set of 5)",
+        price: 25000,
+        oldPrice: 28000,
+        image: "assets/yam.png",
+        discount: "-11%"
     },
     {
         id: 6,
         name: "Ijebu Garri - 1 Paint Bucket",
-        price: 4500,
-        oldPrice: 5000,
-        image: "assets/rice.png", // Reused for testing
-        discount: "-10%"
+        price: 4000,
+        oldPrice: 4500,
+        image: "assets/garri.png",
+        discount: "-11%"
     },
     {
         id: 7,
         name: "Peak Evaporated Milk - Tin (Pack of 6)",
-        price: 4800,
-        oldPrice: 5500,
-        image: "assets/palmoil.png", // Reused for testing
+        price: 6500,
+        oldPrice: 7500,
+        image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&q=80",
         discount: "-13%"
     },
     {
         id: 8,
         name: "Dangote Refined Sugar - 1kg",
-        price: 3200,
+        price: 5000,
         oldPrice: null,
-        image: "assets/rice.png", // Reused for testing
+        image: "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?w=400&q=80",
         discount: null
     },
     {
         id: 9,
         name: "Milo Energy Drink - 500g Refill",
-        price: 4500,
-        oldPrice: 5200,
-        image: "assets/noodles.png", // Reused for testing
-        discount: "-13%"
+        price: 5500,
+        oldPrice: 6200,
+        image: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=400&q=80",
+        discount: "-11%"
     },
     {
         id: 10,
-        name: "Golden Penny Semovita - 2kg",
-        price: 5200,
-        oldPrice: 6000,
-        image: "assets/rice.png", // Reused for testing
-        discount: "-13%"
+        name: "Red Palm Oil - 5 Liters",
+        price: 12000,
+        oldPrice: 14000,
+        image: "assets/palmoil.png",
+        discount: "-14%"
     }
 ];
 
