@@ -415,6 +415,10 @@ const PRODUCT_TRANSLATIONS = {
       ig: 'Akpụkpọ Ehi (Ponmo) - Nnukwu Akpa',
       ha: 'Fatar shanu (Ponmo) - Babban Kunshin',
       pid: 'Clean Ponmo (Cow Skin) - Large Pack'
+    },
+    desc: {
+      en: 'Well-cleaned and processed soft brown cow skin (Ponmo). Free from chemicals, 100% organic, and ready to cook. Absorbs flavors beautifully and adds a rich texture to stews and soups.',
+      yo: 'Pọnmọ tutu ti a ti sọ di mimọ daradara. Ko ni kemikali kankan, o si rọ dada. O dara pupọ lati fi se gbogbo iru ọbẹ.',
       ig: 'Akpụkpọ ehi (Ponmo) dị ọcha, nke a haziri nke ọma. Enweghị ihe nchekwa kemikali. Ọ na-enye ọdịdị bara ọgaranya ma na-amị ofe na stews nke ọma.',
       ha: 'Fatar shanu (Ponmo) mai tsafta da aka sarrafa ta sosai. Ba ta da sinadarai masu kiyaye abinci. Tana da kyau ga miya da stews.',
       pid: 'Well cleaned and processed soft brown Ponmo. No chemicals, purely organic. Absorbs stew well, soft to chew, best addition to any soup.'
