@@ -442,7 +442,7 @@ const PRODUCTS = [
   { id: 8, category: 'grains', name: 'White Beans (Iron Beans) - 1 Paint', price: 16000, oldPrice: 18000, img: 'https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=400&q=80' },
   { id: 9, category: 'grains', name: 'Poundo Yam Flour - 5kg', price: 32000, oldPrice: 36000, img: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&q=80' },
   { id: 10, category: 'grains', name: 'Yellow Garri (Edo) - 1 Paint', price: 6500, oldPrice: 7500, img: 'assets/yellow_garri.png' },
-  { id: 11, category: 'grains', name: 'Basmati Rice (Royal) - 5kg', price: 38000, oldPrice: 42000, img: 'https://images.unsplash.com/photo-1536304993881-ff86e0c9b8f6?w=400&q=80' },
+  { id: 11, category: 'grains', name: 'Basmati Rice (Royal) - 5kg', price: 38000, oldPrice: 42000, img: 'assets/basmati_rice.png' },
   { id: 12, category: 'grains', name: 'Unripe Plantain - Bunch', price: 8000, oldPrice: 10000, img: 'https://images.unsplash.com/photo-1566393028639-d108a42c46a7?w=400&q=80' },
   { id: 13, category: 'grains', name: 'Sweet Potatoes - Small Basket', price: 9000, oldPrice: null, img: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&q=80' },
   { id: 14, category: 'grains', name: 'Irish Potatoes - Small Basket', price: 15000, oldPrice: 18000, img: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&q=80' },
@@ -529,6 +529,22 @@ const PRODUCTS = [
   { id: 87, category: 'meat', name: 'Live Catfish - 1kg', price: 10000, oldPrice: 12000, img: 'https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=400&q=80' },
 
   // --- FRESH PRODUCE & VEGETABLES ---
+  { id: 88, category: 'fresh', name: 'Fresh Tomatoes - 1 Basket', price: 45000, oldPrice: 50000, img: 'https://images.unsplash.com/photo-1595855759920-86582396756a?w=400&q=80' },
+  { id: 89, category: 'fresh', name: 'Tatashe (Bell Pepper) - 1 Basket', price: 35000, oldPrice: 40000, img: 'https://images.unsplash.com/photo-1563513303704-e01349aa2fc4?w=400&q=80' },
+  { id: 90, category: 'fresh', name: 'Rodo (Habanero Pepper) - Paint Bucket', price: 12000, oldPrice: 15000, img: 'https://images.unsplash.com/photo-1588252399419-b9546121f599?w=400&q=80' },
+  { id: 91, category: 'fresh', name: 'Onions (Sokoto) - 1 Bag', price: 85000, oldPrice: 95000, img: 'https://images.unsplash.com/photo-1508747703725-719ae2cf295f?w=400&q=80' },
+  { id: 92, category: 'fresh', name: 'Ugwu Leaves (Fluted Pumpkin) - Bunch', price: 1500, oldPrice: null, img: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400&q=80' },
+  { id: 93, category: 'fresh', name: 'Ewedu Leaves - Bunch', price: 800, oldPrice: null, img: 'https://images.unsplash.com/photo-1628532106090-a4d1266cbd65?w=400&q=80' },
+  { id: 94, category: 'fresh', name: 'Waterleaf - Bunch', price: 1000, oldPrice: null, img: 'https://images.unsplash.com/photo-1551893086-c0d56ed81f91?w=400&q=80' },
+  { id: 95, category: 'fresh', name: 'Bitterleaf (Washed) - 1 Pack', price: 1200, oldPrice: null, img: 'https://images.unsplash.com/photo-1622206141870-07bf11b6d90a?w=400&q=80' },
+  { id: 96, category: 'fresh', name: 'Fresh Garlic - 1kg', price: 6000, oldPrice: 7000, img: 'https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?w=400&q=80' },
+  { id: 97, category: 'fresh', name: 'Fresh Ginger - 1kg', price: 5000, oldPrice: 5500, img: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400&q=80' },
+  { id: 98, category: 'fresh', name: 'Apples (Imported) - Carton', price: 35000, oldPrice: 40000, img: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400&q=80' },
+  { id: 99, category: 'fresh', name: 'Pineapple - Large', price: 2500, oldPrice: 3000, img: 'https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=400&q=80' },
+  { id: 100, category: 'fresh', name: 'Watermelon - Extra Large', price: 4000, oldPrice: 4500, img: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&q=80' },
+  { id: 101, category: 'fresh', name: 'Bananas - Large Bunch', price: 3500, oldPrice: null, img: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400&q=80' },
+  { id: 102, category: 'fresh', name: 'Oranges - 1 Sack', price: 18000, oldPrice: 20000, img: 'https://images.unsplash.com/photo-1547514701-42782101795e?w=400&q=80' },
+  { id: 103, category: 'fresh', name: 'Carrots - 1kg', price: 2000, oldPrice: null, img: 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&q=80' },
   { id: 104, category: 'fresh', name: 'Cabbage - Large Head', price: 3500, oldPrice: null, img: 'https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?w=400&q=80' }
 ];
 
