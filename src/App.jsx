@@ -281,6 +281,7 @@ const UI_TRANSLATIONS = {
     closeBtn: "Cerrar",
     toastAdded: "¡{product} añadido al carrito!",
     currencySymbol: "₦"
+}
 };
 
 const CATEGORIES = [
