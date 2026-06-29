@@ -511,6 +511,246 @@ const PRODUCT_TRANSLATIONS = {
       pid: 'Ponmo Sauce: Cut the Ponmo. Boil am with onion and salt. Fry blended red pepper, onion inside palm oil, drop the Ponmo, cook make the sauce gum body.'
     },
     nutrition: ['Collagen Rich', 'Low Fat', 'Low Calorie']
+  },
+  5: {
+    names: {
+      en: 'Golden Penny Semovita - 2kg',
+      yo: 'Semovita Golden Penny - 2kg',
+      ig: 'Semovita Golden Penny - 2kg',
+      ha: 'Semovita Golden Penny - 2kg',
+      pid: 'Golden Penny Semovita - 2kg'
+    },
+    desc: {
+      en: 'Smooth, fine semolina flour made from quality wheat. Produces a very soft, stretchy swallow ideal for all Nigerian soups. Family-size pack for value.',
+      yo: 'Semovita didara ti o yọ ki o si rọ. O n ṣe iyọ ounjẹ ti o rọ ti o si fa. O dara fun gbogbo iru ọbẹ.',
+      ig: 'Semovita kacha mma nke a mere site na ọka wit. Ọ na-emepụta swallow nke ọma nke na-adị nro ma na-adọrọ. Zuru oke maka ofe niile.',
+      ha: 'Semovita mai kyau da aka yi daga alkama mai inganci. Tana yin abincin yanka mai laushi da kyau. Cikakke ga duk nau\'in miya.',
+      pid: 'Fine and smooth Semovita from quality wheat. E dey make soft, stretchy swallow wey perfect for any soup you wan chop.'
+    },
+    recipe: {
+      en: 'Semovita Swallow: Boil water. Turn off heat, gradually sprinkle Semovita into hot water and stir continuously until smooth. Return to low heat and knead with a wooden spatula until stretchy and lump-free.',
+      yo: 'Swallow Semovita: Se omi jin. Pa ina, da Semovita sinu omi gbona laiyara ki o si ro titi yoo fi di dan. Pada si ina kekere ki o si gun titi yoo fi fa.',
+      ig: 'Swallow Semovita: Sie mmiri. Gbanyụọ ọkụ, wunye Semovita n\'ime mmiri ọkụ n\'obere oge na oge ma kpalie ya ruo mgbe ọ dị nro. Laghachi n\'obere ọkụ, kpalie ruo mgbe ọ dọrọ.',
+      ha: 'Tuwon Semovita: Tafasa ruwa. Kashe wuta, zuba Semovita a ruwan zafi a hankali kuma dinga motsa har sai ya zama mai laushi. Koma a wuta kaɗan ka daka har sai ya yi kira.',
+      pid: 'Semovita Swallow: Boil water, off the gas. Sprinkle Semovita inside hot water and stir until smooth. Put back on small fire and knead till it draw well.'
+    },
+    nutrition: ['High Carbohydrates', 'Protein', 'B Vitamins']
+  },
+  11: {
+    names: {
+      en: 'Basmati Rice (Royal) - 5kg',
+      yo: 'Iresi Basmati (Royal) - 5kg',
+      ig: 'Osikapa Basmati (Royal) - 5kg',
+      ha: 'Shinkafar Basmati (Royal) - 5kg',
+      pid: 'Royal Basmati Rice - 5kg'
+    },
+    desc: {
+      en: 'Long-grain, aromatic Basmati rice with a delicate nutty flavor. Each grain cooks separately, making it perfect for fried rice, pilau, and special occasions. Premium imported quality.',
+      yo: 'Iresi Basmati ti o gùn ti o ni oorun aladun pẹlu itọwo nutty rẹ. Ọkọọkan iresi naa n se ni ọkọọkan, o si dara fun iresi sisun ati pilau.',
+      ig: 'Osikapa Basmati nke ogologo nke na-esi ísì ụtọ na-enye ụtọ nutty. Mkpụrụ osikapa ọ bụla na-esi n\'otu n\'otu, ọ dị mma maka osikapa ebiebiri na pilau.',
+      ha: 'Shinkafar Basmati mai tsayi da ƙamshi da ɗan dandano mai zaƙi. Kowace hatsi tana dafuwa daban-daban, cikakke ga shinkafar soyayye da pilau.',
+      pid: 'Long grain aromatic Basmati rice with sweet nutty smell. Each grain cook separate, e perfect for fried rice and special parties.'
+    },
+    recipe: {
+      en: 'Nigerian Fried Rice: Boil Basmati rice until 70% done. In a wok, stir-fry diced carrots, green peas, sweet corn, and green beans in vegetable oil. Add the parboiled rice, mixed spices, soy sauce, and curry. Stir-fry until golden.',
+      yo: 'Iresi Sisun: Se Basmati titi yoo fi jẹ 70%. Ninu obe nla, sisun karọọti, ewa alawọ, agbado, ati ewa sísun ninu epo. Fi iresi, awọn nkan olorun, obe soy, ati curry si. Sisun titi yoo fi di pupa.',
+      ig: 'Osikapa Ebiebiri: Sie Basmati ruo 70%. N\'ime nchaa, ghee karooti, pisi ọcha, ọka, na ọsụ ọsụ n\'ime mmanụ. Tinye osikapa, ngwa nri, soy sauce, na curry. Ghee ruo mgbe ọ acha ọla ọla.',
+      ha: 'Shinkafar Soyayye: Dafa Basmati har sai ya kai kashi 70%. Soya diced karas, wake kore, masara, da wake layi a mmanụ. Ƙara shinkafar, kayan yaji, soy sauce, da curry. Soya har sai ta yi zinariya.',
+      pid: 'Fried Rice: Cook Basmati till 70% done. Stir-fry carrots, green peas, sweet corn, and spring onion inside vegetable oil. Drop the rice, seasoning, soy sauce and curry. Fry till golden.'
+    },
+    nutrition: ['Low GI Carbs', 'Gluten Free', 'Easy Digestible']
+  },
+  12: {
+    names: {
+      en: 'Unripe Plantain - Bunch',
+      yo: 'Ogede Agbagba Àìmín - Ìgbẹ́',
+      ig: 'Abereka Ọhụrụ (Nke Acha Ọcha) - Otu Ọjọ',
+      ha: 'Ayaba Mai Ɗaci (Bai Nuna) - Gunda',
+      pid: 'Unripe Green Plantain - Full Bunch'
+    },
+    desc: {
+      en: 'Fresh green unripe plantain with high fiber and low glycemic index. Great for diabetics, weight management, and a healthy lifestyle. Can be boiled, roasted, or made into chips and porridge.',
+      yo: 'Ogede agbagba tuntun alawọ ewe pẹlu okun giga ati glycemic kekere. O dara fun awọn alaisan suga, iṣakoso iwuwo, ati igbesi aye ilera.',
+      ig: 'Abereka ọhụrụ na-acha ọcha nke nwere okpukpu nri nke ọma na glycemic dị ala. Ọ dị mma maka ndị ọrịa shuga na nlekọta ibu ahụ nke ọma.',
+      ha: 'Sabbin ayabar kore mai ɗaci tare da okun mai yawa da ƙarancin glycemic. Yana da kyau ga masu ciwon sukari, sarrafa nauyi, da salon rayuwa mai kyau.',
+      pid: 'Fresh green unripe plantain wey get high fiber, low sugar. Best for diabetics, weight management. You fit boil am, roast am, or make am into chips.'
+    },
+    recipe: {
+      en: 'Unripe Plantain Porridge: Peel and cut plantain into chunks. Boil with palm oil, crayfish, stockfish, onions, and peppers for 20-25 minutes until very soft. Add seasonings, vegetables (spinach), and a pinch of salt.',
+      yo: 'Ọbẹ Ogede: Bọ ki o ge ogede. Se pẹlu epo pupa, crayfish, okporoko, alubosa, ati ata fun iṣẹju 20-25 titi yoo fi rọ. Fi awọn nkan olorun, efo, ati iyọ diẹ si.',
+      ig: 'Ofe Abereka: Fuo ma bee abereka. Sie ya na mmanụ nri, crayfish, okporoko, yabasị, na ose maka nkeji 20-25 ruo mgbe ọ dị nro. Tinye ngwa nri, akwụkwọ nri, na nnu obere.',
+      ha: 'Tuwon Ayaba: Fya kuma yanka ayaba. Dafa da man ja, crayfish, stockfish, albasa, da barkono na minti 20-25 har sai ta yi laushi. Ƙara kayan yaji, kayan lambu, da ɗan gishiri.',
+      pid: 'Plantain Porridge: Peel and cut plantain. Boil with palm oil, crayfish, stockfish, onion, and pepper for 20-25 minutes till soft. Add seasoning, spinach, and small salt.'
+    },
+    nutrition: ['High Fiber', 'Potassium Rich', 'Low Glycemic Index']
+  },
+  19: {
+    names: {
+      en: 'Kings Pure Vegetable Oil - 5 Liters',
+      yo: 'Epo Ẹfọ Kings - Lita 5',
+      ig: 'Mmanụ Akwụkwọ Nri Kings - Lita 5',
+      ha: 'Man Gyada/Maia Kings - Lita 5',
+      pid: 'Kings Pure Vegetable Oil - 5 Liters'
+    },
+    desc: {
+      en: 'Refined, light, and cholesterol-free vegetable oil. Ideal for frying, sautéing, baking, and cooking all types of Nigerian dishes. Maintains high smoke point for deep frying.',
+      yo: 'Epo ẹfọ ti o mọ, ti o fẹẹrẹ, ti ko ni cholesterol. O dara fun sisun, jijẹ ounjẹ, fifun, ati sise gbogbo iru ounjẹ Nigeria.',
+      ig: 'Mmanụ akwụkwọ nri nke ọma, nke dị ọcha ma enweghị cholesterol. Ọ dị mma maka ịghee, ịkụsa, na isi nri ụdị nri Naijiria niile.',
+      ha: 'Tsarkakakken mmanụ na laushi ba shi da cholesterol. Yana da kyau ga soya, tukunyar abinci, burodi, da dafa duk nau\'in abincin Najeriya.',
+      pid: 'Clean, light vegetable oil with zero cholesterol. Good for frying, sautéing, baking, and cooking any Nigerian dish. High smoke point for deep fry.'
+    },
+    recipe: {
+      en: 'Nigerian Stew Base: Heat vegetable oil in a pot, add blended tomatoes, red bell peppers, and scotch bonnet. Fry on medium heat for 30-40 minutes, stirring occasionally until the water is gone and oil floats on top.',
+      yo: 'Ipilẹ Stew: Gbona epo ẹfọ, fi tomati, ata tatashe, ati ata rodo ti a lo si. Dín lori ina alabọde fun iṣẹju 30-40, ji ni igba mii titi omi yoo fi rọ.',
+      ig: 'Stew: Kpoo mmanụ ẹfọ n\'ime ite, tinye tomato, ose ndụ, na scotch bonnet e gbukọrọ. Ghee n\'ọkụ etiti maka nkeji 30-40 ruo mgbe mmiri gwụọ.',
+      ha: 'Miyar Naman: Zafi mmanụ a tukunya, zuba daqe tumatur, tattasai ja, da tattasai rana. Soya a wuta matsakaici na minti 30-40 har sai ruwa ya kafe.',
+      pid: 'Stew base: Heat vegetable oil, add blended tomato, tatashe, and rodo. Fry on medium heat for 30-40 minutes, stir sometimes until water dry and oil float up.'
+    },
+    nutrition: ['Vitamin E', 'Cholesterol Free', 'Omega-6 Fatty Acids']
+  },
+  37: {
+    names: {
+      en: 'Indomie Onion Chicken - 1 Carton',
+      yo: 'Indomie Alubosa Adiye - Apoti 1',
+      ig: 'Indomie Yabasị Ọkụkọ - Igbe 1',
+      ha: 'Indomie Albasa Kaza - Kuto 1',
+      pid: 'Indomie Onion Chicken - 1 Full Carton'
+    },
+    desc: {
+      en: 'Nigeria\'s favourite instant noodles. A full carton of Indomie Onion Chicken flavour - the classic, beloved taste enjoyed by millions daily. Fast to cook, satisfying, and perfect for all ages.',
+      yo: 'Indomie olokiki Nigeria. Apoti kikun ti itọwo Alubosa Adiye - adun ti gbogbo eniyan fẹran, ti o jẹ ni ẹẹgbẹrun ojoojumọ. O yarayara lati se, ati o ni itẹlọrun.',
+      ig: 'Indomie a ma ama nke Naijiria. Igbe zuru oke nke Indomie Yabasị Ọkụkọ - ụtọ ọdịnala ọ bụ na ọtụtụ mmadụ na-aṅụ kwa ụbọchị. Ọ na-esi ọsọ, na-enye nnọọ.',
+      ha: 'Shahararren abin sha na Najeriya. Cikakken kuto na dandano Albasa Kaza - dandano na gargajiya da miliyoyi ke ci kowace rana. Yana dafuwa da sauri.',
+      pid: 'Nigeria most popular instant noodles. One full carton of Indomie Onion Chicken - the classic taste wey millions dey chop every day. Fast to cook and filling.'
+    },
+    recipe: {
+      en: 'Classic Indomie: Boil 2 cups of water. Add noodles and cook for 3 minutes. Drain most water, leaving a little. Add all seasoning sachets, stir well. Optionally fry with egg, vegetables, and sausage for a gourmet feel.',
+      yo: 'Indomie Classic: Se omi 2 ago. Fi indomie si ki o se fun iṣẹju 3. Da omi kuro, fi kekere silẹ. Fi gbogbo awọn nkan olorun si ki o si dun. Tabi sisun pẹlu ẹyin ati ẹfọ.',
+      ig: 'Indomie Ọdịnala: Sie mmiri iko abụọ. Tinye noodles sie ya maka nkeji 3. Wụpụ mmiri, hapụ obere. Tinye ngwa nri niile, kwatuo nke ọma. Ị nwekwara ike ighee ya na akwa na akwụkwọ nri.',
+      ha: 'Indomie na gargajiya: Tafasa kwanon ruwa 2. Zuba noodles dafa na minti 3. Zuba ruwa, bar kadan. Ƙara duk kayan yaji, juya da kyau. Ko soya da ƙwai da kayan lambu.',
+      pid: 'Classic Indomie: Boil 2 cups water. Add noodles cook 3 minutes. Pour most water, leave small. Add all seasoning sachets, stir well. Or fry with egg, veg, and sausage.'
+    },
+    nutrition: ['Quick Energy', 'Carbohydrates', 'Iron Fortified']
+  },
+  74: {
+    names: {
+      en: 'Frozen Whole Chicken (Orobo) - 1 Carton',
+      yo: 'Adiye Tutu Nla (Orobo) - Apoti 1',
+      ig: 'Ọkụkọ Nkedo (Orobo) - Igbe 1',
+      ha: 'Sandar Kaza Daskararre (Orobo) - Kuto 1',
+      pid: 'Big Fat Frozen Chicken (Orobo) - 1 Carton'
+    },
+    desc: {
+      en: 'Premium frozen whole broiler chickens (Orobo size - very large). Sourced fresh, cleaned, and processed. Carton contains multiple birds. Perfect for parties, catering, and restaurant use.',
+      yo: 'Adiye tutu nla ti o ni itọwo to ga (iwọn Orobo). Ti a gba titun, ti a fọ ti a si pese. Apoti ni ọpọ adiye ninu. O dara fun ayẹyẹ ati ile ounjẹ.',
+      ig: 'Nnukwu ọkụkọ nkedo kacha mma (ọnụ Orobo - nnukwu nke ukwuu). Ọ bụ ọhụrụ, a sachara ya, achụpụrụ ya. Igbe na-enye ọkụkọ ọtụtụ. Zuru oke maka mmemme na ulo oriri.',
+      ha: 'Manyan daskararen broiler (girman Orobo - babban sosai). An tattara su daga damar, an tsaftace su. Kuto yana dauke da tsuntsaye da yawa. Cikakke ga buki.',
+      pid: 'Premium big fat frozen broiler chickens (Orobo size). Fresh and clean. Carton carry plenty birds. Best for parties, catering and restaurant cooking.'
+    },
+    recipe: {
+      en: 'Party Fried Chicken: Marinate chicken pieces with onion powder, curry, thyme, garlic powder, seasoning cubes, and salt for at least 2 hours. Deep fry in hot oil until golden brown and cooked through. Drain on paper towels.',
+      yo: 'Adiye Sisun: Marine awọn ẹya adiye pẹlu alubosa lulú, curry, thyme, ata ilẹ lulú, ati iyọ fun wakati 2. Dín ninu epo gbona titi yoo fi di pupa.',
+      ig: 'Ọkụkọ Ebiebiri: Tinye ọkụkọ n\'ime marinade nke onion powder, curry, thyme, garlic powder, na nnu maka awa 2. Ghee n\'ime mmanụ ọkụ ruo mgbe ọ acha ọla ọla.',
+      ha: 'Kazar Soyayye: Marinate guntun kaza da onion powder, curry, thyme, garlic powder, da gishiri na sa\'o\'i 2. Soya a zafi har sai ya zama launin zinariya.',
+      pid: 'Party Fried Chicken: Marinate chicken pieces with onion powder, curry, thyme, garlic powder, seasoning, and salt for 2 hours. Deep fry in hot oil till golden brown.'
+    },
+    nutrition: ['High Protein', 'B Vitamins', 'Phosphorus Rich']
+  },
+  81: {
+    names: {
+      en: 'Cow Tripe (Shaki) - 1kg',
+      yo: 'Ijẹ Malu (Shaki) - 1kg',
+      ig: 'Afọ Ehi (Shaki) - 1kg',
+      ha: 'Ciki na Shan Rafi (Shaki) - 1kg',
+      pid: 'Cow Tripe (Shaki) - 1kg'
+    },
+    desc: {
+      en: 'Well-cleaned cow tripe (Shaki), a beloved Nigerian protein delicacy. Carefully processed to remove all impurities. Firm in texture, absorbs flavors beautifully in soups and stews. A must-have for pepper soup and assorted meat pots.',
+      yo: 'Ijẹ malu (Shaki) ti a fọ daradara, onjẹ amuaradagba Nigeria ti o fẹran. Ti a pese daradara lati yọ gbogbo idoti kuro. O gba adun daradara ninu awọn ọbẹ.',
+      ig: 'Afọ ehi (Shaki) nke a sachara nke ọma, nri protein Nigeria a na-ahụ anya. A haziri ya nke ọma maka iwepụ ihe ọjọọ niile. Ọ na-amị ụtọ ofe na stews nke ọma.',
+      ha: 'Tsarkakakken ciki na shan rafi (Shaki), abincin furotin da Najeriya ta fi son. An sarrafa shi da kyau don cire duk wata ƙazanta. Yana ɗaukar dandano da kyau a miya.',
+      pid: 'Clean washed cow tripe (Shaki), beloved Nigerian protein. Processed well to remove impurities. Firm texture, absorbs flavor well inside soup and stew.'
+    },
+    recipe: {
+      en: 'Assorted Pepper Soup: Wash Shaki thoroughly. Boil with onions, salt, and crayfish until tender. Add pepper soup spice mix (ehu, uziza, uda seeds), blend fresh pepper and add. Simmer until broth is richly flavored.',
+      yo: 'Ọbẹ Ata: Fọ Shaki daradara. Se pẹlu alubosa, iyọ, ati crayfish titi yoo fi rọ. Fi adalu egbo ata ọbẹ (ehu, uziza) si. Se pẹlu ata tuntun titi omi yoo fi kun.',
+      ig: 'Ofe Ose: Sachaa Shaki nke ọma. Sie ya na yabasị, nnu, na crayfish ruo mgbe ọ dị nro. Tinye ngwa nri ofe ose (ehu, uziza, uda). Kpalie ruo mgbe ofe ahụ dị ụtọ.',
+      ha: 'Miya Mai Zafi: Wanke Shaki da kyau. Tafasa da albasa, gishiri, da crayfish har sai ya yi laushi. Ƙara kayan miya mai zafi (ehu, uziza, uda). Dahu har sai miyar ta yi ɗanɗano mai kyau.',
+      pid: 'Pepper Soup: Wash Shaki well. Boil with onion, salt and crayfish till tender. Add pepper soup spice mix (ehu, uziza, uda), fresh pepper. Cook till broth tastes rich.'
+    },
+    nutrition: ['High Protein', 'Collagen Rich', 'Iron Source']
+  },
+  84: {
+    names: {
+      en: 'Dry Catfish - Pack of 5',
+      yo: 'Eja Aro Gbigbẹ - Apo Marun',
+      ig: 'Azụ Nkwebi Kpọrọ Nkụ - Ngwugwu 5',
+      ha: 'Busasshen Kifi (Catfish) - Gutsure Biyar',
+      pid: 'Dry Catfish - Pack of 5 Pieces'
+    },
+    desc: {
+      en: 'Premium smoked and dried whole catfish with a deep, intense flavor. Adds an authentic smoky richness to any Nigerian soup. Carefully selected, deboned where possible, and ready to use.',
+      yo: 'Eja aro gbigbẹ ti a ti fi ina mu pẹlu adun jin. O n fi adun oya gbigbona si eyikeyi ọbẹ Nigeria. Ti a yan daradara, ti a si yọ egungun kuro.',
+      ig: 'Azụ nkwebi kpọrọ nkụ nke ọma nke na-enye ụtọ ọkụ dị omimi. Ọ na-enye ụtọ ọkụ n\'ime ofe Naijiria ọ bụla. A họrọ ya nke ọma ma wepụ ọkpụkpụ.',
+      ha: 'Babban busasshen catfish mai ɗanɗano mai zurfin ji. Yana ƙara warin hayaki mai arziki ga duk miya ta Najeriya. An zaba da kyau, an cire kasusuwa inda zai yiwu.',
+      pid: 'Premium smoked dry catfish with deep intense flavor. Adds authentic smoky richness to any Nigerian soup. Hand selected, bones removed where possible, ready to use.'
+    },
+    recipe: {
+      en: 'Catfish Pepper Soup: Wash dry catfish with hot water to soften. Remove bones. In a pot, boil with fresh onions, crayfish, and pepper soup spices. Add fresh utazi leaves and simmer until rich and aromatic.',
+      yo: 'Ọbẹ Ata Eja Aro: Fọ eja gbigbẹ pẹlu omi gbona. Yọ egungun kuro. Ninu ikoko, se pẹlu alubosa, crayfish, ati egbo ata. Fi utazi tuntun si ki o si se titi yoo kun.',
+      ig: 'Ofe Ose Azụ Nkwebi: Sachaa azụ kpọrọ nkụ na mmiri ọkụ. Wepụ ọkpụkpụ. N\'ime ite, sie ya na yabasị, crayfish, na ngwa nri ofe ose. Tinye akwụkwọ utazi ma kpalie.',
+      ha: 'Miyar Kifi Mai Zafi: Wanke busasshen kifi da ruwan zafi don yin laushi. Cire kasusuwa. A tukunya, dafa da albasa, crayfish, da kayan miya mai zafi. Ƙara ganyayyaki da dahu.',
+      pid: 'Catfish Pepper Soup: Wash dry catfish with hot water to soften. Remove bones. Boil with onion, crayfish, and pepper soup spice. Add utazi leaf and simmer till it taste rich.'
+    },
+    nutrition: ['High Protein', 'Omega-3 Rich', 'Calcium Source']
+  },
+  88: {
+    names: {
+      en: 'Fresh Tomatoes - 1 Basket',
+      yo: 'Tomati Tuntun - Agbada Kan',
+      ig: 'Tomato Ọhụrụ - Otu Agbada',
+      ha: 'Sabbin Tumatur - Kwando Daya',
+      pid: 'Fresh Ripe Tomatoes - 1 Basket'
+    },
+    desc: {
+      en: 'Fresh, ripe, juicy red tomatoes sourced directly from local farms. Rich in vitamins A and C, and lycopene. Perfect for blending into stews, fresh salads, and sauces. Essential Nigerian cooking ingredient.',
+      yo: 'Tomati pupa tuntun, juicy ti a gba taara lati awọn oko agbegbe. O ni Vitamin A ati C, ati lycopene. O dara fun dida ọbẹ, saladi tuntun, ati awọn obe.',
+      ig: 'Tomato ọhụrụ, na-acha ọbara ọbara, nke a nwetara ozugbo na ụlọ ọrụ ugbo. Nwere Vitamin A na C, na lycopene. Zuru oke maka ịgbuo ofe na salad ọhụrụ.',
+      ha: 'Sabbin tumatur ja mai ruwa da aka samo kai tsaye daga gonakin gida. Yana da Vitamin A da C, da lycopene. Cikakke don tofa miya, salad, da miya.',
+      pid: 'Fresh ripe juicy red tomatoes from local farm. Rich in Vitamin A, C and lycopene. Best for blending stew, fresh salad, and sauce. Essential Naija cooking ingredient.'
+    },
+    recipe: {
+      en: 'Party Tomato Stew: Blend tomatoes with red bell peppers, scotch bonnet, and onions. Fry in vegetable or palm oil for 40-50 minutes, stirring frequently until the raw taste is gone and oil rises. Season with salt, curry, thyme, and seasoning cubes.',
+      yo: 'Ọbẹ Tomati: Lo tomati pẹlu tatashe, ata rodo, ati alubosa. Dín ninu epo fun iṣẹju 40-50, jiji ni igba mii titi adun aise yoo fi rọ. Fi iyọ, curry, thyme si.',
+      ig: 'Stew Tomato: Gbuo tomato na ose ndụ, scotch bonnet, na yabasị. Ghee n\'ime mmanụ maka nkeji 40-50, na-agbaghari mgbe oge na oge ruo mgbe ụtọ ọhụrụ gwụọ. Tinye nnu, curry, thyme.',
+      ha: 'Miyar Tomato: Daqe tumatur da tattasai ja, tattasai rana, da albasa. Soya a mmanụ na minti 40-50, dinga juya har sai ɗanɗanon danye ya tafi. Ƙara gishiri, curry, thyme.',
+      pid: 'Party Stew: Blend tomatoes with tatashe, scotch bonnet and onion. Fry in oil for 40-50 minutes, stir well until raw taste gone and oil rise. Season with salt, curry, thyme.'
+    },
+    nutrition: ['Vitamin C Rich', 'Lycopene Antioxidant', 'Vitamin A']
+  },
+  89: {
+    names: {
+      en: 'Tatashe (Bell Pepper) - 1 Basket',
+      yo: 'Tatashe (Ata Tataṣe) - Agbada Kan',
+      ig: 'Tatashe (Bell Pepper) - Otu Agbada',
+      ha: 'Tattasai Mai Girma (Tatashe) - Kwando Daya',
+      pid: 'Tatashe Bell Pepper - 1 Basket'
+    },
+    desc: {
+      en: 'Fresh, large, red and yellow tatashe (bell peppers). The backbone of authentic Nigerian stew. Sweet, not spicy, and packed with vitamins. Blends beautifully with tomatoes and scotch bonnet for a rich, deep red stew.',
+      yo: 'Tatashe tuntun nla, pupa ati ofeefee. Ohun pataki ninu ọbẹ Nigeria. O dun, ko si tun gbona, o si kun fun awọn vitamin. O dara pẹlu tomati fun ọbẹ pupa jin.',
+      ig: 'Tatashe ọhụrụ, nnukwu, na-acha ọbara ọbara na odo odo. Ihe bụ isi na stew Naijiria ọdịnala. Na-atọ ụtọ, ọ bụghị ose, ma nwee vitamin ọtụtụ. Ọ na-agbuo nke ọma na tomato.',
+      ha: 'Sabbin tattasai ja da rawaya (tatashe). Ginshiƙi na miya ta gargajiya ta Najeriya. Yana da zaƙi, ba mai zafi ba, kuma yana cike da bitamin. Yana gauraya da kyau da tumatur.',
+      pid: 'Fresh big red and yellow tatashe (bell pepper). The backbone of real Nigerian stew. Sweet, not spicy, full of vitamins. Blend with tomato for rich deep red stew.'
+    },
+    recipe: {
+      en: 'Ayamase Stew Base: Roughly chop tatashe, blend with onions and scotch bonnet. Bleach palm oil in a covered pot until whitened, then fry the blended pepper mix, locust beans (iru), and assorted meat. Cook until oil rises and stew is thick.',
+      yo: 'Ọbẹ Ayamase: Ge tatashe, lo pẹlu alubosa ati ata rodo. Gba epo pupa labẹ ideri titi yoo fun, lẹhinna dín adalu ata, iru, ati eran. Se titi epo yoo soke ati ọbẹ yoo nipọn.',
+      ig: 'Ayamase Stew: Bee tatashe, gbuo ya na yabasị na scotch bonnet. Bleach mmanụ n\'ime ite mechiri ruo mgbe ọ acha ọcha, wee ghee ose e gbukọrọ, iru, na anụ dị iche iche.',
+      ha: 'Miyar Ayamase: Yanka tatashe, daqe da albasa da tattasai rana. Tafasa man ja a rufe har sai ya yi haske, sai a soya gauraro barkono, iru, da naman garwashi.',
+      pid: 'Ayamase Stew: Roughly blend tatashe with onion and scotch bonnet. Bleach palm oil covered till white, fry the blended pepper, iru, and assorted meat. Cook till oil rise and stew thick.'
+    },
+    nutrition: ['Vitamin C', 'Vitamin B6', 'Folate Rich']
   }
 };
 
@@ -520,14 +760,14 @@ const PRODUCTS = [
   { id: 2, category: 'grains', name: 'Oloyin Honey Beans - 1 Paint Bucket', price: 18000, oldPrice: 20000, img: 'assets/beans.png' },
   { id: 3, category: 'grains', name: 'Ijebu Garri - 1 Paint Bucket', price: 6000, oldPrice: 7000, img: 'assets/garri.png' },
   { id: 4, category: 'grains', name: 'Abuja Yam - Large Tuber (Set of 5)', price: 35000, oldPrice: 40000, img: 'assets/yam.png' },
-  { id: 5, category: 'grains', name: 'Golden Penny Semovita - 2kg', price: 8500, oldPrice: 10000, img: 'assets/semovita.png' },
+  { id: 5, category: 'grains', name: 'Golden Penny Semovita - 2kg', price: 8500, oldPrice: 10000, img: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=80' },
   { id: 6, category: 'grains', name: 'Mama Gold Flour - 50kg', price: 88000, oldPrice: 95000, img: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80' },
   { id: 7, category: 'grains', name: 'Ofada Rice - 5kg', price: 25000, oldPrice: 28000, img: 'assets/ofada_rice.png' },
   { id: 8, category: 'grains', name: 'White Beans (Iron Beans) - 1 Paint', price: 16000, oldPrice: 18000, img: 'https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=400&q=80' },
   { id: 9, category: 'grains', name: 'Poundo Yam Flour - 5kg', price: 32000, oldPrice: 36000, img: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&q=80' },
   { id: 10, category: 'grains', name: 'Yellow Garri (Edo) - 1 Paint', price: 6500, oldPrice: 7500, img: 'assets/yellow_garri.png' },
   { id: 11, category: 'grains', name: 'Basmati Rice (Royal) - 5kg', price: 38000, oldPrice: 42000, img: 'assets/basmati_rice.png' },
-  { id: 12, category: 'grains', name: 'Unripe Plantain - Bunch', price: 8000, oldPrice: 10000, img: 'assets/plantain.png' },
+  { id: 12, category: 'grains', name: 'Unripe Plantain - Bunch', price: 8000, oldPrice: 10000, img: 'https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=400&q=80' },
   { id: 13, category: 'grains', name: 'Sweet Potatoes - Small Basket', price: 9000, oldPrice: null, img: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&q=80' },
   { id: 14, category: 'grains', name: 'Irish Potatoes - Small Basket', price: 15000, oldPrice: 18000, img: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&q=80' },
   { id: 15, category: 'grains', name: 'Wheat Flour - 1kg', price: 3200, oldPrice: null, img: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80' },
@@ -597,7 +837,7 @@ const PRODUCTS = [
   { id: 73, category: 'beverages', name: 'Cowbell Milk Sachet - Roll of 50', price: 12000, oldPrice: 14000, img: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&q=80' },
 
   // --- MEAT, POULTRY & SEAFOOD ---
-  { id: 74, category: 'meat', name: 'Frozen Whole Chicken (Orobo) - 1 Carton', price: 90000, oldPrice: 100000, img: 'assets/chicken.png' },
+  { id: 74, category: 'meat', name: 'Frozen Whole Chicken (Orobo) - 1 Carton', price: 90000, oldPrice: 100000, img: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=400&q=80' },
   { id: 75, category: 'meat', name: 'Fresh Beef Cuts - 1kg', price: 15000, oldPrice: null, img: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3e2f?w=400&q=80' },
   { id: 76, category: 'meat', name: 'Titus Fish (Mackerel) - 1 Carton', price: 110000, oldPrice: 125000, img: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&q=80' },
   { id: 77, category: 'meat', name: 'Snail (Large) - Set of 10', price: 50000, oldPrice: 58000, img: 'assets/snail.png' },
@@ -613,8 +853,8 @@ const PRODUCTS = [
   { id: 87, category: 'meat', name: 'Live Catfish - 1kg', price: 10000, oldPrice: 12000, img: 'https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=400&q=80' },
 
   // --- FRESH PRODUCE & VEGETABLES ---
-  { id: 88, category: 'fresh', name: 'Fresh Tomatoes - 1 Basket', price: 45000, oldPrice: 50000, img: 'assets/tomatoes.png' },
-  { id: 89, category: 'fresh', name: 'Tatashe (Bell Pepper) - 1 Basket', price: 35000, oldPrice: 40000, img: 'assets/bell_pepper.png' },
+  { id: 88, category: 'fresh', name: 'Fresh Tomatoes - 1 Basket', price: 45000, oldPrice: 50000, img: 'https://images.unsplash.com/photo-1546470427-e5bc8f0f6c04?w=400&q=80' },
+  { id: 89, category: 'fresh', name: 'Tatashe (Bell Pepper) - 1 Basket', price: 35000, oldPrice: 40000, img: 'https://images.unsplash.com/photo-1526397751294-331021109fbd?w=400&q=80' },
   { id: 90, category: 'fresh', name: 'Rodo (Habanero Pepper) - Paint Bucket', price: 12000, oldPrice: 15000, img: 'https://images.unsplash.com/photo-1588252399419-b9546121f599?w=400&q=80' },
   { id: 91, category: 'fresh', name: 'Onions (Sokoto) - 1 Bag', price: 85000, oldPrice: 95000, img: 'https://images.unsplash.com/photo-1508747703725-719ae2cf295f?w=400&q=80' },
   { id: 92, category: 'fresh', name: 'Ugwu Leaves (Fluted Pumpkin) - Bunch', price: 1500, oldPrice: null, img: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400&q=80' },
@@ -949,8 +1189,7 @@ const AuthModal = ({ isOpen, onClose, onLogin, language }) => {
         </form>
         
         <div className="toggle-auth">
-          {isLogin ? `${t.needAccount} ` : `${t.haveAccount} `}
-          <span onClick={() => setIsLogin(!isLogin)}>{isLogin ? t.signUp : t.login}</span>
+          <span onClick={() => setIsLogin(!isLogin)}>{isLogin ? t.switchSignUp : t.switchLogin}</span>
         </div>
       </div>
     </div>
@@ -967,7 +1206,7 @@ const CartModal = ({ isOpen, onClose, cartItems, onCheckout, language }) => {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content large" onClick={e => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}><i className="fa-solid fa-xmark"></i></button>
-        <h2 className="modal-title"><i className="fa-solid fa-cart-shopping"></i> {t.yourCart}</h2>
+        <h2 className="modal-title"><i className="fa-solid fa-cart-shopping"></i> {t.cartTitle}</h2>
         
         {cartItems.length === 0 ? (
           <p style={{ textAlign: 'center', padding: '40px 0', color: 'var(--text-medium)' }}>{t.cartEmpty}</p>
