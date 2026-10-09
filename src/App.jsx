@@ -10,6 +10,9 @@ import { ProductDetailModal } from './components/ProductDetailModal';
 import { CartModal } from './components/CartModal';
 import { LogisticsModal } from './components/LogisticsModal';
 import { LogisticsBanner } from './components/LogisticsBanner';
+import { LocationNotice } from './components/LocationNotice';
+import { MarketComparisonTool } from './components/MarketComparisonTool';
+import { MarketFaq } from './components/MarketFaq';
 import { AuthModal } from './components/AuthModal';
 import { Footer } from './components/Footer';
 
@@ -170,6 +173,9 @@ export default function App() {
         language={language}
       />
 
+      {/* Location Delivery Notice Bar */}
+      <LocationNotice onOpenLogistics={() => setIsLogisticsOpen(true)} />
+
       <div className="main-layout">
         {/* Categories Sidebar */}
         <aside className="sidebar">
@@ -263,11 +269,20 @@ export default function App() {
             </div>
           )}
 
+          {/* Interactive Market Comparison Tool */}
+          <MarketComparisonTool 
+            onOpenLogistics={() => setIsLogisticsOpen(true)}
+            onAddToCart={handleAddToCart}
+          />
+
           {/* Doorstep Logistics Full Banner */}
           <LogisticsBanner 
             onOpenLogistics={() => setIsLogisticsOpen(true)}
             language={language}
           />
+
+          {/* Frequently Asked Questions */}
+          <MarketFaq />
         </main>
       </div>
 

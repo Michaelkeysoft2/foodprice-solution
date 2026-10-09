@@ -2166,3 +2166,446 @@ body.dark-mode .market-rate-item.active {
     font-size: 13px;
   }
 }
+
+/* =========================================
+   Location Delivery Notice Bar
+   ========================================= */
+.location-notice-bar {
+  background: #f0fdf4;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 8px 24px;
+  font-size: 13px;
+  color: #166534;
+}
+
+body.dark-mode .location-notice-bar {
+  background: rgba(6, 78, 59, 0.25);
+  border-bottom-color: rgba(16, 185, 129, 0.2);
+  color: #a7f3d0;
+}
+
+.location-notice-content {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.location-pin-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.location-pin-group i {
+  color: #059669;
+}
+
+.location-inline-select {
+  background: white;
+  border: 1px solid #86efac;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #14532d;
+  outline: none;
+  cursor: pointer;
+}
+
+body.dark-mode .location-inline-select {
+  background: #1e293b;
+  border-color: #059669;
+  color: #ecfdf5;
+}
+
+.location-action-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.location-time-tag {
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #047857;
+}
+
+body.dark-mode .location-time-tag {
+  color: #6ee7b7;
+}
+
+.location-order-link {
+  background: #059669;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s;
+}
+
+.location-order-link:hover {
+  background: #047857;
+  transform: translateX(2px);
+}
+
+/* =========================================
+   Interactive Market Comparison Tool
+   ========================================= */
+.market-tool-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 30px;
+  margin: 36px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.market-tool-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 28px;
+}
+
+.tool-title-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ecfdf5;
+  color: #059669;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+body.dark-mode .tool-title-badge {
+  background: rgba(6, 78, 59, 0.3);
+  color: #6ee7b7;
+}
+
+.market-tool-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.market-tool-header p {
+  font-size: 14px;
+  color: var(--text-medium);
+  line-height: 1.5;
+}
+
+.basket-selector-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 768px) {
+  .basket-selector-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.basket-select-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.basket-select-item label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-medium);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.basket-select-item select {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.basket-select-item select:focus {
+  border-color: var(--primary-color);
+}
+
+.market-basket-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.basket-card {
+  position: relative;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 20px 14px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.basket-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.basket-card.winner {
+  border: 2px solid #059669;
+  background: linear-gradient(180deg, #ecfdf5 0%, var(--bg-main) 100%);
+  box-shadow: 0 4px 18px rgba(5, 150, 105, 0.15);
+}
+
+body.dark-mode .basket-card.winner {
+  background: linear-gradient(180deg, rgba(6, 78, 59, 0.3) 0%, var(--bg-main) 100%);
+}
+
+.winner-tag {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: white;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.basket-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13.5px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.basket-card-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 6px;
+}
+
+.basket-card-note {
+  font-size: 11px;
+  color: var(--text-light);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.market-savings-alert {
+  background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+  color: white;
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.2);
+}
+
+.savings-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.savings-info {
+  flex: 1;
+  min-width: 240px;
+}
+
+.savings-info h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.savings-info p {
+  font-size: 12.5px;
+  opacity: 0.9;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.savings-btn {
+  background: white;
+  color: #064e3b;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.savings-btn:hover {
+  background: #f0fdf4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   FAQ Section
+   ========================================= */
+.faq-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 36px 30px;
+  margin: 36px 0;
+}
+
+.faq-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.faq-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ecfdf5;
+  color: #059669;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+body.dark-mode .faq-badge {
+  background: rgba(6, 78, 59, 0.3);
+  color: #6ee7b7;
+}
+
+.faq-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.faq-header p {
+  font-size: 14px;
+  color: var(--text-medium);
+  line-height: 1.5;
+}
+
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-main);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.faq-item.open {
+  border-color: var(--primary-color);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.faq-question:hover {
+  color: var(--primary-color);
+}
+
+.faq-question i {
+  font-size: 13px;
+  color: var(--primary-color);
+}
+
+.faq-answer {
+  padding: 0 20px 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .faq-answer {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+.faq-answer p {
+  font-size: 13.5px;
+  color: var(--text-medium);
+  line-height: 1.6;
+  margin: 12px 0 0;
+}
+
