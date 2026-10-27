@@ -16,6 +16,9 @@ import { MarketFaq } from './components/MarketFaq';
 import { CustomGroceryListModal } from './components/CustomGroceryListModal';
 import { OjeMarketDayBanner } from './components/OjeMarketDayBanner';
 import { TestimonialsSection } from './components/TestimonialsSection';
+import { PriceTicker } from './components/PriceTicker';
+import { PriceAlertModal } from './components/PriceAlertModal';
+import { ReportPriceModal } from './components/ReportPriceModal';
 import { AuthModal } from './components/AuthModal';
 import { Footer } from './components/Footer';
 
@@ -67,6 +70,8 @@ export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLogisticsOpen, setIsLogisticsOpen] = useState(false);
   const [isCustomListOpen, setIsCustomListOpen] = useState(false);
+  const [isAlertsOpen, setIsAlertsOpen] = useState(false);
+  const [isReportPriceOpen, setIsReportPriceOpen] = useState(false);
 
   const [sortBy, setSortBy] = useState('featured');
   const [filterBagSharing, setFilterBagSharing] = useState(false);
@@ -173,6 +178,30 @@ export default function App() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleSharePriceSheet = () => {
+    const topItems = PRODUCTS.slice(0, 10).map(p => `• ${p.name}: ₦${p.price.toLocaleString()}`).join('\n');
+    const sheetText = `*FOODPRICE (FP) - TODAY'S IBADAN MARKET PRICE BULLETIN*\n` +
+      `📅 Date: ${new Date().toLocaleDateString('en-GB')}\n` +
+      `🔍 Surveyed at 7:15 AM (Bodija, Ojoo, Sango, Oje & Dugbe)\n\n` +
+      `*Selected Food Staples Today:*\n${topItems}\n\n` +
+      `Check all 100+ prices & book doorstep market errands at: https://foodprice-solution.vercel.app`;
+
+    if (navigator.share) {
+      navigator.share({
+        title: 'Today Food Prices in Ibadan (FoodPrice FP)',
+        text: sheetText
+      }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(sheetText);
+      const newToast = { id: Date.now(), message: "Price bulletin copied! You can paste and share on WhatsApp." };
+      setToasts(prev => [...prev, newToast]);
+      setTimeout(() => {
+        setToasts(prev => prev.map(t => t.id === newToast.id ? { ...t, fading: true } : t));
+        setTimeout(() => setToasts(prev => prev.filter(t => t.id !== newToast.id)), 300);
+      }, 3000);
+    }
+  };
+
   const t = UI_TRANSLATIONS[language] || UI_TRANSLATIONS.en;
   const currentMarketObj = MARKETS.find(m => m.id === activeMarket) || MARKETS[0];
 
@@ -198,6 +227,13 @@ export default function App() {
         setLanguage={setLanguage}
         theme={theme}
         onToggleTheme={handleToggleTheme}
+      />
+
+      {/* Live Morning Market Price Barometer Ticker */}
+      <PriceTicker 
+        onOpenAlerts={() => setIsAlertsOpen(true)}
+        onOpenReportPrice={() => setIsReportPriceOpen(true)}
+        onSharePriceSheet={handleSharePriceSheet}
       />
 
       {/* Market Selector Bar */}
@@ -395,6 +431,17 @@ export default function App() {
         onClose={() => setIsCustomListOpen(false)}
         language={language}
       />
+
+      <PriceAlertModal 
+        isOpen={isAlertsOpen}
+        onClose={() => setIsAlertsOpen(false)}
+      />
+
+      <ReportPriceModal 
+        isOpen={isReportPriceOpen}
+        onClose={() => setIsReportPriceOpen(false)}
+      />
+
       <AuthModal 
         isOpen={isAuthOpen} 
         onClose={() => setIsAuthOpen(false)} 

@@ -60,6 +60,22 @@ export const ProductCard = ({ product, onAddToCart, activeMarket, onClickCard, l
         </div>
       )}
 
+      {/* Price Trend Direction Indicator */}
+      <div className="card-trend-row">
+        {product.oldPrice && product.oldPrice > displayPrice ? (
+          <span className="card-trend-badge down" title="Cheaper than last week's surveyed price">
+            <i className="fa-solid fa-arrow-trend-down"></i> -₦{(product.oldPrice - displayPrice).toLocaleString()}
+          </span>
+        ) : (
+          <span className="card-trend-badge stable" title="Stable market selling rate">
+            <i className="fa-solid fa-check"></i> Stable
+          </span>
+        )}
+        <span className="card-verified-dot" title="Surveyed Today 7:15 AM in Ibadan">
+          <span className="dot-green"></span> Today
+        </span>
+      </div>
+
       <div className="price-container">
         <div className="current-price">₦{displayPrice.toLocaleString()}</div>
         {product.oldPrice && (

@@ -3146,4 +3146,306 @@ body.dark-mode .cta-left {
   opacity: 0.9;
 }
 
+/* =========================================
+   Live Morning Price Barometer Ticker
+   ========================================= */
+.price-ticker-strip {
+  background: #0f172a;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #334155;
+  height: 40px;
+  overflow: hidden;
+  font-size: 12.5px;
+}
+
+.ticker-label-badge {
+  background: #1e293b;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  font-weight: 800;
+  font-size: 11.5px;
+  letter-spacing: 0.5px;
+  color: #f1f5f9;
+  border-right: 1px solid #334155;
+  white-space: nowrap;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.live-radar-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: radar-pulse 1.8s infinite;
+}
+
+@keyframes radar-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.survey-time-tag {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 12px;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.ticker-viewport {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll-ticker 40s linear infinite;
+}
+
+.ticker-track.paused {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-right: 36px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.ticker-item i {
+  color: #94a3b8;
+}
+
+.trend-arrow {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 2px;
+}
+
+.trend-arrow.down {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+.trend-arrow.up {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.trend-arrow.stable {
+  background: rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+}
+
+.ticker-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  background: #0f172a;
+  height: 100%;
+  border-left: 1px solid #334155;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.ticker-action-btn {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.ticker-action-btn:hover {
+  background: #334155;
+}
+
+.ticker-action-btn.alert-btn {
+  background: #065f46;
+  border-color: #059669;
+  color: #ecfdf5;
+}
+
+.ticker-action-btn.alert-btn:hover {
+  background: #047857;
+}
+
+@media (max-width: 900px) {
+  .ticker-actions .share-btn,
+  .ticker-actions .report-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .survey-time-tag {
+    display: none;
+  }
+  .ticker-label-badge {
+    padding: 0 8px;
+    font-size: 10px;
+  }
+}
+
+/* =========================================
+   Product Card Trend & Verification Row
+   ========================================= */
+.card-trend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 0 6px;
+  font-size: 11px;
+}
+
+.card-trend-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.card-trend-badge.down {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+body.dark-mode .card-trend-badge.down {
+  background: rgba(6, 78, 59, 0.4);
+  color: #6ee7b7;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.card-trend-badge.stable {
+  background: var(--bg-main);
+  color: var(--text-medium);
+  border: 1px solid var(--border-color);
+}
+
+.card-verified-dot {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.dot-green {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+/* =========================================
+   4-Week Price History Card (Product Modal)
+   ========================================= */
+.price-history-card {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 14px 0;
+}
+
+.history-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.history-timeline-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.history-pt {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 6px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.history-pt.current {
+  border: 1.5px solid #059669;
+  background: #ecfdf5;
+}
+
+body.dark-mode .history-pt.current {
+  background: rgba(6, 78, 59, 0.35);
+  border-color: #10b981;
+}
+
+.pt-label {
+  font-size: 10px;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+.pt-price {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-dark);
+  display: block;
+}
+
+.pt-status {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #059669;
+  display: block;
+  margin-top: 2px;
+}
+
+
 
