@@ -1,7 +1,7 @@
 import React from 'react';
 import { UI_TRANSLATIONS } from '../data/localizations';
 
-export const Hero = ({ language, onOpenLogistics, onScrollToProducts }) => {
+export const Hero = ({ language, onOpenLogistics, onOpenCustomList, onScrollToProducts }) => {
   const t = UI_TRANSLATIONS[language] || UI_TRANSLATIONS.en;
 
   return (
@@ -29,6 +29,10 @@ export const Hero = ({ language, onOpenLogistics, onScrollToProducts }) => {
           <button className="hero-btn secondary" onClick={onOpenLogistics}>
             <i className="fa-solid fa-motorcycle"></i>
             {t.heroLogisticsBtn}
+          </button>
+          <button className="hero-btn tertiary" onClick={onOpenCustomList}>
+            <i className="fa-solid fa-clipboard-list"></i>
+            Send Custom List
           </button>
         </div>
       </div>

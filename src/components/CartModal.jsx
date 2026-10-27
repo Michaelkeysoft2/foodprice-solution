@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
-import { MARKETS, DELIVERY_ZONES, SHOPPER_SERVICES } from '../data/markets';
+import { MARKETS, DELIVERY_ZONES, SHOPPER_SERVICES, BANK_DETAILS } from '../data/markets';
 import { UI_TRANSLATIONS } from '../data/localizations';
 
 export const CartModal = ({ isOpen, onClose, cartItems, onOpenLogistics, language, onUpdateQuantity, onRemoveItem }) => {
   const [selectedZone, setSelectedZone] = useState(DELIVERY_ZONES[0].id);
   const [selectedShopper, setSelectedShopper] = useState(SHOPPER_SERVICES[0].id);
   const [includeLogistics, setIncludeLogistics] = useState(true);
+  const [copiedBank, setCopiedBank] = useState(false);
 
   if (!isOpen) return null;
+
+  const handleCopyAccount = () => {
+    navigator.clipboard.writeText(BANK_DETAILS.accountNumber);
+    setCopiedBank(true);
+    setTimeout(() => setCopiedBank(false), 2500);
+  };
 
   const t = UI_TRANSLATIONS[language] || UI_TRANSLATIONS.en;
   const itemsTotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -168,6 +175,42 @@ export const CartModal = ({ isOpen, onClose, cartItems, onOpenLogistics, languag
               <div className="summary-row grand-total-row">
                 <span>Total Amount:</span>
                 <span className="grand-total-val">₦{grandTotal.toLocaleString()}</span>
+              </div>
+            </div>
+
+            {/* Direct Bank Transfer Option */}
+            <div className="bank-transfer-box">
+              <div className="bank-transfer-header">
+                <i className="fa-solid fa-building-columns"></i>
+                <div>
+                  <strong>Direct Bank Transfer Option</strong>
+                  <span>Pay directly or on WhatsApp verification</span>
+                </div>
+              </div>
+              <div className="bank-details-row">
+                <div className="bank-field">
+                  <span className="bank-field-label">Bank:</span>
+                  <strong>{BANK_DETAILS.bankName}</strong>
+                </div>
+                <div className="bank-field">
+                  <span className="bank-field-label">Account No:</span>
+                  <div className="account-copy-badge">
+                    <code>{BANK_DETAILS.accountNumber}</code>
+                    <button 
+                      type="button" 
+                      className="copy-btn" 
+                      onClick={handleCopyAccount}
+                      title="Copy account number"
+                    >
+                      <i className={copiedBank ? "fa-solid fa-check" : "fa-regular fa-copy"}></i>
+                      {copiedBank ? "Copied!" : "Copy"}
+                    </button>
+                  </div>
+                </div>
+                <div className="bank-field">
+                  <span className="bank-field-label">Name:</span>
+                  <span>{BANK_DETAILS.accountName}</span>
+                </div>
               </div>
             </div>
 

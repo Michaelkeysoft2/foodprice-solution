@@ -6,6 +6,7 @@ export const Header = ({
   onOpenCart, 
   onOpenAuth, 
   onOpenLogistics, 
+  onOpenCustomList,
   user, 
   searchQuery, 
   setSearchQuery, 
@@ -39,6 +40,16 @@ export const Header = ({
       </div>
 
       <div className="header-actions">
+        {/* Custom Grocery List Pill */}
+        <button 
+          onClick={onOpenCustomList} 
+          className="header-custom-list-pill" 
+          title="Type or paste your written market grocery list"
+        >
+          <i className="fa-solid fa-clipboard-list"></i>
+          <span>Custom List</span>
+        </button>
+
         {/* Logistics Errand Button */}
         <button 
           onClick={onOpenLogistics} 

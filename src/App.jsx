@@ -13,11 +13,15 @@ import { LogisticsBanner } from './components/LogisticsBanner';
 import { LocationNotice } from './components/LocationNotice';
 import { MarketComparisonTool } from './components/MarketComparisonTool';
 import { MarketFaq } from './components/MarketFaq';
+import { CustomGroceryListModal } from './components/CustomGroceryListModal';
+import { OjeMarketDayBanner } from './components/OjeMarketDayBanner';
+import { TestimonialsSection } from './components/TestimonialsSection';
 import { AuthModal } from './components/AuthModal';
 import { Footer } from './components/Footer';
 
 const CATEGORIES = [
   { id: 'all', icon: 'fa-solid fa-border-all', names: { en: 'All Foodstuffs', yo: 'Gbogbo Ojà', ig: 'Ngwa Ahịa Niile', ha: 'Duk Kayayyaki', pid: 'All Foodstuff', fr: 'Tous les produits', es: 'Todos los productos' } },
+  { id: 'bag-sharing', icon: 'fa-solid fa-users-viewfinder', names: { en: 'Bag Sharing (Split a Bag)', yo: 'Pín Àpò (Split a Bag)', ig: 'Kekọrịta Akpa', ha: 'Raba Buga', pid: 'Bag Sharing (Split am)', fr: 'Partage de sacs', es: 'Compartir saco' } },
   { id: 'grains', icon: 'fa-solid fa-bowl-rice', names: { en: 'Grains & Tubers', yo: 'Koro & Gbaguda', ig: 'Mkpụrụ & Ji', ha: 'Hatsi & Doya', pid: 'Grains & Yam', fr: 'Céréales et tubercules', es: 'Granos y tubérculos' } },
   { id: 'oils', icon: 'fa-solid fa-bottle-droplet', names: { en: 'Oils & Spices', yo: 'Epo & Olorun', ig: 'Mmanụ & Ngwa Nri', ha: 'Mmai & Kayan Yaji', pid: 'Oils & Spices', fr: 'Huiles et épices', es: 'Aceites y especias' } },
   { id: 'packaged', icon: 'fa-solid fa-box', names: { en: 'Packaged Foods', yo: 'Ounjẹ Ti A Pọn', ig: 'Nri A Nwakọrọ', ha: 'Kayan Abinci a Akwati', pid: 'Packaged Foods', fr: 'Aliments emballés', es: 'Alimentos envasados' } },
@@ -62,6 +66,10 @@ export default function App() {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLogisticsOpen, setIsLogisticsOpen] = useState(false);
+  const [isCustomListOpen, setIsCustomListOpen] = useState(false);
+
+  const [sortBy, setSortBy] = useState('featured');
+  const [filterBagSharing, setFilterBagSharing] = useState(false);
   
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -90,13 +98,38 @@ export default function App() {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
 
-  // Filter products by category, market, and search
+  // Filter & sort products by category, market, search, and sorting controls
   const displayedProducts = PRODUCTS.filter(p => {
-    const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+    const isBagProduct = (p.unit && p.unit.toLowerCase().includes('bag')) || 
+                         p.name.toLowerCase().includes('bag') || 
+                         p.price >= 50000;
+
+    const matchesCategory = activeCategory === 'all' 
+      ? true 
+      : activeCategory === 'bag-sharing'
+      ? isBagProduct
+      : p.category === activeCategory;
+
+    const matchesBagSharing = !filterBagSharing || isBagProduct;
+
     const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           p.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           (p.badge && p.badge.toLowerCase().includes(searchQuery.toLowerCase()));
-    return matchesCategory && matchesSearch;
+
+    return matchesCategory && matchesBagSharing && matchesSearch;
+  }).sort((a, b) => {
+    const priceA = (activeMarket !== 'all' && a.marketPrices?.[activeMarket]) ? a.marketPrices[activeMarket] : a.price;
+    const priceB = (activeMarket !== 'all' && b.marketPrices?.[activeMarket]) ? b.marketPrices[activeMarket] : b.price;
+
+    if (sortBy === 'price-asc') return priceA - priceB;
+    if (sortBy === 'price-desc') return priceB - priceA;
+    if (sortBy === 'name-asc') return a.name.localeCompare(b.name);
+    if (sortBy === 'biggest-savings') {
+      const savingsA = a.oldPrice ? (a.oldPrice - priceA) : 0;
+      const savingsB = b.oldPrice ? (b.oldPrice - priceB) : 0;
+      return savingsB - savingsA;
+    }
+    return 0; // 'featured'
   });
 
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
@@ -160,6 +193,7 @@ export default function App() {
         onOpenAuth={() => setIsAuthOpen(true)}
         onOpenCart={() => setIsCartOpen(true)}
         onOpenLogistics={() => setIsLogisticsOpen(true)}
+        onOpenCustomList={() => setIsCustomListOpen(true)}
         language={language}
         setLanguage={setLanguage}
         theme={theme}
@@ -175,6 +209,15 @@ export default function App() {
 
       {/* Location Delivery Notice Bar */}
       <LocationNotice onOpenLogistics={() => setIsLogisticsOpen(true)} />
+
+      {/* Oje 8-Day Traditional Market Day Countdown Strip */}
+      <OjeMarketDayBanner 
+        onSelectMarket={(marketId) => {
+          setActiveMarket(marketId);
+          scrollToProducts();
+        }}
+        onOpenCustomList={() => setIsCustomListOpen(true)}
+      />
 
       <div className="main-layout">
         {/* Categories Sidebar */}
@@ -209,6 +252,12 @@ export default function App() {
             >
               <i className="fa-solid fa-motorcycle"></i> Book Errand Shopper
             </button>
+            <button 
+              className="sidebar-custom-list-btn"
+              onClick={() => setIsCustomListOpen(true)}
+            >
+              <i className="fa-solid fa-clipboard-list"></i> Send Custom List
+            </button>
           </div>
         </aside>
 
@@ -218,6 +267,7 @@ export default function App() {
             <Hero 
               language={language} 
               onOpenLogistics={() => setIsLogisticsOpen(true)}
+              onOpenCustomList={() => setIsCustomListOpen(true)}
               onScrollToProducts={scrollToProducts}
             />
           )}
@@ -239,12 +289,39 @@ export default function App() {
             </div>
           </div>
 
-          <div id="products-section" className="section-title">
-            <div>
-              {searchQuery ? `Search Results for "${searchQuery}"` : (CATEGORIES.find(c => c.id === activeCategory)?.names[language] || 'All Foodstuffs')}
-              <span style={{ fontSize: '14px', fontWeight: '500', color: 'var(--text-light)', marginLeft: '10px' }}>
+          <div id="products-section" className="section-toolbar">
+            <div className="section-title-part">
+              <h2>{searchQuery ? `Search Results for "${searchQuery}"` : (CATEGORIES.find(c => c.id === activeCategory)?.names[language] || 'All Foodstuffs')}</h2>
+              <span className="items-count-badge">
                 ({displayedProducts.length} {t.items})
               </span>
+            </div>
+
+            <div className="toolbar-controls">
+              <label className={`bag-sharing-toggle ${filterBagSharing ? 'active' : ''}`} title="Filter bulk bags suitable for group splitting">
+                <input 
+                  type="checkbox" 
+                  checked={filterBagSharing} 
+                  onChange={e => setFilterBagSharing(e.target.checked)} 
+                />
+                <i className="fa-solid fa-users"></i>
+                <span>Bag Sharing (Split a Bag)</span>
+              </label>
+
+              <div className="sort-by-wrapper">
+                <i className="fa-solid fa-arrow-down-short-wide"></i>
+                <select 
+                  value={sortBy} 
+                  onChange={e => setSortBy(e.target.value)} 
+                  className="sort-select"
+                >
+                  <option value="featured">Featured / Recommended</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="biggest-savings">Biggest Savings</option>
+                  <option value="name-asc">Alphabetical (A - Z)</option>
+                </select>
+              </div>
             </div>
           </div>
 
@@ -273,6 +350,11 @@ export default function App() {
           <MarketComparisonTool 
             onOpenLogistics={() => setIsLogisticsOpen(true)}
             onAddToCart={handleAddToCart}
+          />
+
+          {/* Real Customer Reviews from Ibadan Residents */}
+          <TestimonialsSection 
+            onOpenCustomList={() => setIsCustomListOpen(true)}
           />
 
           {/* Doorstep Logistics Full Banner */}
@@ -308,6 +390,11 @@ export default function App() {
       />
 
       {/* Modals */}
+      <CustomGroceryListModal 
+        isOpen={isCustomListOpen}
+        onClose={() => setIsCustomListOpen(false)}
+        language={language}
+      />
       <AuthModal 
         isOpen={isAuthOpen} 
         onClose={() => setIsAuthOpen(false)} 

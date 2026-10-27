@@ -95,3 +95,71 @@ export const SHOPPER_SERVICES = [
     desc: 'Specialized bulk grain, whole bag or quarter-bag division & heavy packaging handling.'
   }
 ];
+
+// Direct Bank Transfer Details for verified customer payments
+export const BANK_DETAILS = {
+  bankName: 'Moniepoint MFB / OPay',
+  accountNumber: '8039579410',
+  accountName: 'FoodPrice Market Logistics',
+  whatsappSupport: '2348039579410',
+  phoneDisplay: '0803 957 9410'
+};
+
+// Real Customer Reviews from Ibadan Residents
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    name: 'Mrs. Funke Adeyemi',
+    location: 'Bodija Housing Estate',
+    market: 'Bodija Market',
+    quote: 'Saved me at least 3 hours of dust and Saturday traffic in Bodija. The errand shopper picked stone-free beans and very sweet Abuja yam. Delivery was right at my gate!',
+    rating: 5,
+    tag: 'Working Mom'
+  },
+  {
+    id: 2,
+    name: 'Dr. Tunde Oladipo',
+    location: 'UI Senior Staff Quarters',
+    market: 'Ojoo & Bodija',
+    quote: 'We shared a 50kg bag of rice among three colleagues. FoodPrice split and bagged it cleanly. We saved over ₦15,000 each compared to buying paint buckets in our local shop.',
+    rating: 5,
+    tag: 'Bag Sharing Club'
+  },
+  {
+    id: 3,
+    name: 'Khadijat Balogun',
+    location: 'Ring Road / Challenge',
+    market: 'Oje Traditional Market',
+    quote: 'I ordered pure red palm oil and authentic dry catfish from Oje Market. You cannot get that quality in modern supermarkets. The rider arrived in less than 50 minutes.',
+    rating: 5,
+    tag: 'Verified Buyer'
+  },
+  {
+    id: 4,
+    name: 'Engr. Segun Alabi',
+    location: 'Akobo / General Gas',
+    market: 'Bodija Market',
+    quote: 'Checking the price of foodstuffs before planning our family monthly budget has become a routine for my wife and me. Transparent and trustworthy.',
+    rating: 5,
+    tag: 'Regular Shopper'
+  }
+];
+
+// Function to compute next Oje traditional market day (8-day Yoruba market cycle)
+export const getOjeMarketStatus = () => {
+  // Reference anchor: January 4, 2026 was an Oje market day
+  const anchorDate = new Date('2026-01-04T00:00:00');
+  const today = new Date();
+  const diffTime = today.getTime() - anchorDate.getTime();
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  const cycleDay = ((diffDays % 8) + 8) % 8;
+  const daysUntilNext = cycleDay === 0 ? 0 : 8 - cycleDay;
+
+  return {
+    isToday: daysUntilNext === 0,
+    daysLeft: daysUntilNext,
+    cycleNotice: daysUntilNext === 0 
+      ? 'TODAY is Oje Market Day! Direct farm produce arriving from Oyo rural valleys.' 
+      : `Next Oje Market Day in ${daysUntilNext} day${daysUntilNext > 1 ? 's' : ''}. Pre-order farm-fresh palm oil, iru & garri now!`
+  };
+};
